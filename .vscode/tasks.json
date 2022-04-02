@@ -1,0 +1,36 @@
+// Arquivos .json são arquivos que a gente utiliza para representar dados em um arquivo de texto
+// podemos colocar numeros, strings, booleanos, etc. Abaixo vamos colocar um objeto que fica dentro de {}
+//
+
+
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar",
+            "type": "shell",
+            "command": "g++ media.cpp soma.cpp aulaGravada.cpp -o teste",
+            "problemMatcher": [],
+            "group": {            // Agora essa é a tarefa de build padrao e eu posso rodar ela clicando em termianl -> executar tarefa de build, ou aperto control+f7 
+
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Executar",      // Criando agora a task para executar meu programa
+
+            "type": "shell",
+            "command": "./teste",
+            "problemMatcher": [],
+            "group": {             // AGora eu só preciso apertar f7 pra executar o programa
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
+
+// AGORA UM CONSIGO COMPILAR CLICANDO EM TERMINAL -> EXECUTAR TAREFA -> COMPILAR  
