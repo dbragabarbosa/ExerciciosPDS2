@@ -1,0 +1,3 @@
+Joao Carlos;62;professor
+Maria Jose;31;medica
+Gabriel Fernando;77;estudante
