@@ -13,6 +13,14 @@
 // -
 
 
+// TIPOS ABSTRATOR DE DADOS == CONTRATO
+
+// para definir um tad, vc define quais os valores fazem parte dessa conjunto e quais operacoes vc pode utilizar pra manipular esses dados
+
+// 
+
+
+
 #include <iostream>
 #include <string>
 
@@ -28,7 +36,6 @@ int main()
 
     string a = "Thiago";
     a.append("Noronha");
-    // string x = a + " " + b;
     cout << a << endl;
     cout << a.size() << endl;
 
