@@ -49,6 +49,8 @@ int main()
     // Função para imprimir meu vector
     Imprimir(x);
 
+    // A desvantagem de vector, é que vc não consegue inserir ou retirar no meio do vector
+
 
 
     return 0;
