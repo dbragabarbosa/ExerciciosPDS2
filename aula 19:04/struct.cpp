@@ -7,7 +7,7 @@
 #include <cmath>    // PARA USAR SQRT
 
 
-#include "complexo.h"    // QUERO USAR ESSA MINHA STRUCT EM QUALQUER OUTRO LUAGR
+#include "complexo.h"    // QUERO USAR ESSA MINHA STRUCT EM QUALQUER OUTRO LUGAR 
 
 using namespace std;
 
