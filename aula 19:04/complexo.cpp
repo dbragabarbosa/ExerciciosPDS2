@@ -3,7 +3,6 @@
 #include "complexo.h"  
 
 
-
 Complexo Complexo::conjugado()   //ESSA FUNÇÃO NÃO RECEBE PARÂMETRO, POIS ELA JÁ É CHAMADA POR ALGUM NÚMERO COMPLEXO ESPECIFICO 
 {
     Complexo y;
@@ -17,4 +16,4 @@ Complexo Complexo::conjugado()   //ESSA FUNÇÃO NÃO RECEBE PARÂMETRO, POIS EL
 
 // PARA COMPILAR   -->   c++ -c complexo.cpp
 
-
+ 
