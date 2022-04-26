@@ -1,6 +1,14 @@
 // TERMINANDO DE VER TIPOS ABSTRATOS DE DADOS
 
+// O OBJETIVO DA AULA É ENTENDER QUE, QUANDO A GENTE SEPARA OS DADOS PARA COLOCAR ELES COMO PRIVADOS E SEPARA MÉTODOS 
+// E COLOCA COMO PÚBLICOS, QUANDO EU QUERO MODIFICAR ALGO NA MINHA IMPLEMENTAÇÃO, EU NÃO PRECISO MUDAR NADA NO ARQUIVO MAIN
 
+// A GENTE UTILIZA ESSA TÉCNICA QUANDO VAMOS CONSTRUIR OS NOSSOS TADS
+// ISSO É O --ENCAPSULAMENTO--
+
+// SE VC FAZ ISSO EM TODOS OS MODULOS DO SEU PROGRAMA, TUDO SERÁ INDEPENDENTE 
+
+// A PARTIR DISSO, TROCAMOS O NOME DE STRUCT PARA CLASS 
 
 
 
@@ -46,14 +54,14 @@ pair<Complexo, Complexo> Raizes(double a, double b, double c)
 
     if(delta >= 0.0)
     {
-        c1.imag = c2.imag = 0.0;
-        c1.real = ((-b) + sqrt(delta)) / (2 * a);
-        c2.real = ((-b) - sqrt(delta)) / (2 * a);
+        c1.imag() = c2.imag() = 0.0;
+        c1.real() = ((-b) + sqrt(delta)) / (2 * a);
+        c2.real() = ((-b) - sqrt(delta)) / (2 * a);
     }
     else
     {
-        c1.real = (-b) / (2 * a);
-        c1.imag = sqrt(-delta) / (2 * a);
+        c1.real() = (-b) / (2 * a);
+        c1.imag() = sqrt(-delta) / (2 * a);
         c2 = c1.conjugado();
     }
 
@@ -82,31 +90,17 @@ void Imprimir(Complexo x)
 
 int main()
 {
-    //REPRESENTAÇÃO DO QUE QUERO SER CAPAZ DE FAZER 
-    // Complexo c1 = 3 - 5i;
-    // Complexo c2 = 2 * c1;
-    // Complexo c3 = c1 + c2;
-    
-    // cout << c3 << endl;
+    Complexo x(2.0, -3,0);
 
-    //AGORA QUE CRIEI O STRUCT, JÁ POSSO DECALRAR UM NÚMERO COMPLEXO
+    Complexo y;
+    y = x.simetrico();
 
-    // Complexo c1;
-    // c1.real = 3.0;
-    // c1.imag = -4.0;
-    Complexo c1 = {3.0, 5.0};
+    Complexo z;
+    z = x.somar(y);
 
-    //cout << c1.real << " + " << c1.imag << "i" << endl;
-    Imprimir(c1);
-
-
-
-    double a, b, c;
-    cin >> a >> b >> c;
-    pair<Complexo, Complexo> p = Raizes(a, b, c);
-    Imprimir(p.first);
-    Imprimir(p.second);
-
+    Imprimir(x);
+    Imprimir(y);
+    Imprimir(z);
 
     return 0;
 }
