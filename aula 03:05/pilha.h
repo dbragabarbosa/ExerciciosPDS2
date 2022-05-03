@@ -14,7 +14,10 @@ class Pilha
         No* topo_;
     public:
     // Cria uma pilha vazia()
-    Pilha();
+    Pilha();      // CONSTRUTOR 
+
+    // Desaloca a memória dos elementos que estão ainda na pilha 
+    ˜Pilha();    // DESTRUTOR 
 
     // Retorna o elemento no topo da pilha
     float topo();

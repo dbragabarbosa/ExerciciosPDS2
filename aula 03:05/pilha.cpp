@@ -35,3 +35,11 @@ void Pilha::Remover()
     topo_ = (*topo_).proximo;
     delete aux;
 }
+
+Pilha::˜Pilha()
+{
+    while(!vazia())
+    {
+        Remover();
+    }
+}
