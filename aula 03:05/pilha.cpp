@@ -31,5 +31,7 @@ void Pilha::Inserir(float k)
 
 void Pilha::Remover()
 {
-    
+    No* aux = topo_;
+    topo_ = (*topo_).proximo;
+    delete aux;
 }
