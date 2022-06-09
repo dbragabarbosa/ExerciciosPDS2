@@ -6,32 +6,87 @@ JogoDaVida::JogoDaVida(int l, int c)
     : vivas_(l, std::vector<bool>(c, false)) {
 }
 
-bool JogoDaVida::viva(int i, int j) {
-  return vivas_[i][j];
+
+
+bool JogoDaVida::viva(int i, int j) 
+{
+    if( 0 > i || 0 > j || i >= linhas() || j >= colunas() )
+    {
+        ExcecaoCelulaInvalida x;
+        x.linha = i;
+        x.coluna = j;
+        throw x;
+    }
+    
+    return vivas_[i][j];
 }
 
-void JogoDaVida::Matar(int i, int j) {
-  vivas_[i][j] = false;
-}
-void JogoDaVida::Reviver(int i, int j) {
-  vivas_[i][j] = true;
+
+void JogoDaVida::Matar(int i, int j) 
+{
+    if( 0 > i || 0 > j || i >= linhas() || j >= colunas() )
+    {
+        ExcecaoCelulaInvalida x;
+        x.linha = i;
+        x.coluna = j;
+        throw x;
+    }
+    
+    vivas_[i][j] = false;
 }
 
-int JogoDaVida::NumeroDeVizinhasVivas(int x, int y) {
+void JogoDaVida::Reviver(int i, int j) 
+{
+    if( 0 > i || 0 > j || i >= linhas() || j >= colunas() )
+    {
+        ExcecaoCelulaInvalida x;
+        x.linha = i;
+        x.coluna = j;
+        throw x;
+    }
+    
+    vivas_[i][j] = true;
+}
+
+
+int JogoDaVida::NumeroDeVizinhasVivas(int x, int y) 
+{
+    if( 0 > x || 0 > y || x >= linhas() || y >= colunas() )
+    {
+        ExcecaoCelulaInvalida z;
+        z.linha = x;
+        z.coluna = y;
+        throw z;
+    }
+    
+    
   int vizinhas_vivas = 0;
-  for (int i : {x - 1, x, x + 1}) {
-    for (int j : {y - 1, y, y + 1}) {
-      if (i != x || j != y) {  // Não conta a própria célula [x, y].
+  
+  for (int i : {x - 1, x, x + 1}) 
+  {
+    for (int j : {y - 1, y, y + 1}) 
+    {
+      if (i != x || j != y)    // Não conta a própria célula [x, y].
+      {  
         int i_circular = (i + linhas()) % linhas();   
         int j_circular = (j + colunas()) % colunas();
-        if (viva(i_circular, j_circular)) {
+        
+        if (viva(i_circular, j_circular)) 
+        {
           vizinhas_vivas++;
         }
+        
       }
+      
     }
+    
   }
+  
   return vizinhas_vivas;
 }
+
+
+
 
 void JogoDaVida::ExecutarProximaIteracao() {
   JogoDaVida novo(linhas(), colunas());  // Cria um novo objeto, com todas as 
